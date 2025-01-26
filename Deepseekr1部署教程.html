@@ -1,0 +1,158 @@
+<!DOCTYPE html><html><head>
+      <title>Deepseekr1部署教程</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\ACP\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="将deepseek-r1大模型部署到自己电脑上实现本地ai对话">将Deepseek r1大模型部署到自己电脑上，实现本地AI对话 </h1>
+<h2 id="目录">目录： </h2>
+<p>一、 <a href="#目标" style="text-decoration: none;color: inherit">目标</a></p>
+<p>二、 <a href="#基本技术路线" style="text-decoration: none;color: inherit">基本技术路线</a></p>
+<p>三、 <a href="#安装Ollama" style="text-decoration: none;color: inherit">安装Ollama</a></p>
+<ol>
+<li><a href="#调整安装位置" style="text-decoration: none;color: inherit">调整安装位置</a></li>
+<li><a href="#调整模型储存位置" style="text-decoration: none;color: inherit">调整模型储存位置</a></li>
+<li><a href="#使用Ollama安装大模型Deepseek_r1" style="text-decoration: none;color: inherit">使用Ollama安装大模型Deepseek r1</a></li>
+</ol>
+<p>四、 <a href="#安装Open_WebUI" style="text-decoration: none;color: inherit">安装Open WebUI</a></p>
+<ol>
+<li><a href="#安装Docker" style="text-decoration: none;color: inherit">安装Docker</a>
+<ol>
+<li><a href="#虚拟Linux环境" style="text-decoration: none;color: inherit">虚拟Linux环境</a></li>
+<li><a href="#安装Docker_Desktop" style="text-decoration: none;color: inherit">安装Docker_Desktop</a></li>
+</ol>
+</li>
+<li><a href="#部署Open_WebUI" style="text-decoration: none;color: inherit">部署Open WebUI</a></li>
+</ol>
+<p>五、 <a href="#结语" style="text-decoration: none;color: inherit">结语</a></p>
+<h2 id="一-span-id目标目标span">一、<span id="目标">目标</span> </h2>
+<p>在自己电脑上部署一个AI对话大模型，并实现GUI。（该大模型使用的是Deepseek r1）</p>
+<h2 id="二-span-id基本技术路线基本技术路线span">二、<span id="基本技术路线">基本技术路线</span> </h2>
+<ol>
+<li>
+<p>使用Ollama来引入大模型。</p>
+</li>
+<li>
+<p>使用Open WebUI来创建GUI界面。</p>
+</li>
+</ol>
+<h2 id="三-span-id安装ollama安装ollamaspan">三、<span id="安装Ollama">安装Ollama</span> </h2>
+<p>直接到Ollama官方网站安装即可，无需绿色上网。</p>
+<p>Ollama官网：<a href="https://ollama.com/" title="Ollama官方网站">Ollama官网</a> 下载页面：<a href="https://ollama.com/download" title="Ollama下载">Ollama下载</a></p>
+<p><img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/Ollama%E5%AE%98%E7%BD%91.png" alt="Ollama官网"></p>
+<p>Ollama会默认安装在C盘。安装完毕后，可以使用环境变量调整Ollama的安装位置和默认的模型位置和本身的位置。</p>
+<p>安装成功后可以在托盘看到一个小羊驼的图标，也可以在CMD中输入</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code>ollama
+</code></pre><p>来查看是否安装成功。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BE%93%E5%85%A5ollama.png" alt="命令行输入ollama"></p>
+<h3 id="1-span-id调整安装位置调整安装位置-span">1. <span id="调整安装位置">调整安装位置 </span> </h3>
+<p>（1） 将<code>C:\Users\XX\AppData\Local\Programs\Ollama</code>这个文件夹移动到其他盘，例如改为<code>D:\Ollama</code>。</p>
+<p>（2）将修改用户变量的PATH变量，将原来的<code>C:\Users\XX\AppData\Local\Programs\Ollama</code>路径更新为新的位置，即<code>D:\Ollama</code>。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F%E7%9A%84PATH.png" alt="修改用户变量的PATH"></p>
+<h3 id="2-span-id调整模型储存位置调整模型储存位置span">2. <span id="调整模型储存位置">调整模型储存位置</span> </h3>
+<p>编辑或创建一个新的用户账户变量 <code>OLLAMA_MODELS</code>，设置为你希望存储模型的路径。</p>
+<p><img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E8%AE%BE%E7%BD%AE%E5%AD%98%E5%82%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%B7%AF%E5%BE%84.png" alt="设置存储模型的路径"></p>
+<p><i>踩坑：将Ollama文件位置移动后，Ollama的程序位置就改变了，这个时候再从搜索里搜索<code>Ollama</code>来打开托盘图标会没有任何反应。这个时候要手动修改一下快捷方式的指向位置。另外，快捷方式应指向<code>ollama app.exe</code>而不是<code>ollama.exe</code>。</i></p>
+<h3 id="3-span-id使用ollama安装大模型deepseek_r1使用ollama安装大模型deepseek-r1span">3. <span id="使用Ollama安装大模型Deepseek_r1">使用Ollama安装大模型Deepseek r1</span> </h3>
+<p>Ollama官方的模型地址为：<a href="https://ollama.com/search" title="Ollama官方模型搜索页面">Ollama模型</a></p>
+<p>当然我们也可以直接使用 run 命令 + 模型名字就可以运行模型。如果之前没有下载过，那么会自动下载。下载完毕之后可以在终端中直接进行对话了。</p>
+<p>使用CMD命令：<code>ollama run [模型名称]</code>。</p>
+<p>这里的模型名字可以在<a href="https://ollama.com/search" title="Ollama官方模型搜索页面">Ollama模型</a>模型页面获得。例如本次使用的Deepseek r1，它的模型名称为：<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/Deepseekr1%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%90%8D%E7%A7%B0.png" alt="Deepseek r1的模型名称"></p>
+<p>我们选择好需要的大小，点击左边的复制，在CMD中直接输入：</p>
+<p><em>注：大小选择取决于显存大小，具体规则我也不懂，据说公式是：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>显存大小（</mtext><mi>G</mi><mtext>）</mtext><mo>&gt;</mo><mn>2</mn><mo>×</mo><mtext>模型大小（</mtext><mi>B</mi><mtext>）</mtext></mrow><annotation encoding="application/x-tex">显存大小 （G）\gt 2 \times 模型大小（B）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord cjk_fallback">显存大小（</span><span class="mord mathnormal">G</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">模型大小（</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord cjk_fallback">）</span></span></span></span>，比如16G显存可以带动8B的模型。但也有人说16G显存可以跑13B大小，自行搜索判断一下吧。</em></p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code>ollama run deepseek-r1:8b
+</code></pre><p>即可自动开始下载。下载完毕后，我们就可以在命令行与Deepseek r1进行AI对话了。</p>
+<p><img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8EDeepseekr1%E8%BF%9B%E8%A1%8CAI%E5%AF%B9%E8%AF%9D.png" alt="在命令行与Deepseek r1进行AI对话"></p>
+<h2 id="四-span-id安装open_webui安装open-webuispan">四、<span id="安装Open_WebUI">安装Open WebUI</span> </h2>
+<p>Open WebUI可以给我们提供一个比命令行更美观的GUI界面。如果你觉得命令行交互也不是不行，可以选择不安装。</p>
+<p>Open WebUI只能通过Docker进行安装。所以我们在安装Open WebUI之前要先安装Docker。</p>
+<h3 id="1-span-id安装docker安装dockerspan">1. <span id="安装Docker">安装Docker</span> </h3>
+<p>Docker是运行在Linux系统上的，所以在安装Docker之前，我们还要完成Windows的Linux虚拟化。</p>
+<p>这里有两种解决方案：</p>
+<ol>
+<li>
+<p>使用基于Hyper-V的虚拟化。</p>
+</li>
+<li>
+<p>使用基于WSL的虚拟化。</p>
+</li>
+</ol>
+<p>我安装是使用方案2，基于WSL的虚拟化。所以先讲一下方案2。</p>
+<h4 id="1-span-id虚拟linux环境虚拟linux环境span">（1） <span id="虚拟Linux环境">虚拟Linux环境</span> </h4>
+<h5 id="方案一基于wsl的虚拟">方案一：基于WSL的虚拟 </h5>
+<p>打开命令行，输入：</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code>wsl <span class="token parameter variable">--install</span>
+</code></pre><p>即可一键安装WSL2。</p>
+<p><strong>注意：此时需要科学上网。</strong></p>
+<p>提示：本人安装时，即使科学上网，输入命令后也报错：无法解析服务器。原因是<code>raw.githubusercontent.com</code> 这个域名DNS解析不到IP地址。解决方式：</p>
+<ol>
+<li>
+<p>修改DNS解析。改位默认<code>114.114.114.114</code>，备用<code>8.8.8.8</code>。<em>（实测无效）</em></p>
+</li>
+<li>
+<p>修改host文件。</p>
+<p>（1）打开IP或域名解析网站（例如<a href="https://site.ip138.com/" title="IP138在线解析IP地址">IP在线解析网站 IP138</a>），解析<code>raw.githubusercontent.com</code>这个域名的IP地址（本人解析结果为185.199.110.133）。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/IP%E8%A7%A3%E6%9E%90%E7%BD%91%E7%AB%99%E8%A7%A3%E6%9E%90IP.png" alt="IP解析网站解析IP"><br>
+然后ping一下，确保能ping通。</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code><span class="token function">ping</span> <span class="token number">185.199</span>.110.133
+</code></pre><p>（2）打开host文件（host文件在<code>C:\Windows\System32\drivers\etc</code>这个目录下），将解析结果复制进去。</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code><span class="token number">185.199</span>.110.133 raw.githubusercontent.com 
+</code></pre><p>（3）再次ping一下<code>raw.githubusercontent.com</code>能ping通就说明没问题了</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code><span class="token function">ping</span> raw.githubusercontent.com 
+</code></pre></li>
+</ol>
+
+<h5 id="方案二基于hyper-v的虚拟">方案二：基于Hyper-V的虚拟 </h5>
+<p>在<code>控制面板</code>中找到<code>程序和功能</code>，选择<code>启用或关闭Windows功能</code>，找到<code>Hyper-V</code>，选择即可。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E6%89%93%E5%BC%80Hyper-V%E5%8A%9F%E8%83%BD.png" alt="打开Hyper-V功能"></p>
+<p>操作完成后，可以在任务管理器查看虚拟化是否已经启动。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E5%8C%96%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8.png" alt="任务管理器查看虚拟化是否启动"></p>
+<h4 id="2span-id安装docker_desktop安装docker_desktopspan">（2）<span id="安装Docker_Desktop">安装Docker_Desktop</span> </h4>
+<p>官网：<a href="https://www.docker.com/products/docker-desktop/" title="Docker_Desktop官网">Docker_Desktop官网</a>，下载地址：<a href="https://www.docker.com/get-started/">Docker_Desktop下载地址</a>，直接下载即可。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/Docker_Desktop%E4%B8%8B%E8%BD%BD.png" alt="Docker_Desktop下载"></p>
+<p><em>注：主流的桌面PC，笔记本电脑，服务器（包括虚拟机）都在用X86_64的CPU，也就是选择AMD64安装包。</em></p>
+<p>安装时直接选择跳过选择啊注册啊什么有的没的就行。由于我是安装完毕后才写的笔记，所以没有截图，直接skip就行。</p>
+<h3 id="2span-id部署open_webui部署open-webuispan">2.<span id="部署Open_WebUI">部署Open WebUI</span> </h3>
+<p>在科学上网的环境下，使用命令行一键部署。打开CMD，输入以下命令：</p>
+<p><strong>注意：此时一定要科学上网，否则速度感人。</strong></p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">HF_ENDPOINT</span><span class="token operator">=</span>https://hf-mirror.com <span class="token parameter variable">-p</span> <span class="token number">3000</span>:8080 --add-host<span class="token operator">=</span>host.docker.internal:host-gateway <span class="token parameter variable">-v</span> <span class="token punctuation">[</span>安装目录<span class="token punctuation">]</span>:/app/backend/data <span class="token parameter variable">--name</span> open-webui <span class="token parameter variable">--restart</span> always ghcr.io/open-webui/open-webui:main
+</code></pre><p>[Ollama安装目录]要替换为自己的安装目录。比如这里安装到D盘。</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell shell"><code><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">HF_ENDPOINT</span><span class="token operator">=</span>https://hf-mirror.com <span class="token parameter variable">-p</span> <span class="token number">3000</span>:8080 --add-host<span class="token operator">=</span>host.docker.internal:host-gateway <span class="token parameter variable">-v</span> D:<span class="token punctuation">\</span>APP<span class="token punctuation">\</span>ollama-web-ui:/app/backend/data <span class="token parameter variable">--name</span> open-webui <span class="token parameter variable">--restart</span> always ghcr.io/open-webui/open-webui:main
+</code></pre><p>等待下载完毕，就全部部署成功了。在Docker_Desktop里可以看到open-webui的服务。<br>
+<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/Docker_Desktop%E9%87%8C%E7%9A%84open-webui%E6%9C%8D%E5%8A%A1.png" alt="Docker_Desktop里的open-webui服务"></p>
+<p>点击<code>Port(s)</code>即可打开对话界面。<img src="Deepseekr1%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B_assets/%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90%E5%90%8E%E7%9A%84AI%E5%AF%B9%E8%AF%9D%E7%95%8C%E9%9D%A2.png" alt="部署完成后的AI对话界面"><br>
+（首次打开会有一个注册界面，注册一下就可以了。）</p>
+<h2 id="五-span-id结语结语span">五、<span id="结语">结语</span> </h2>
+<p>本地大模型由于体积小，所以效果不如在线商业大模型，只能应对日常没那么高精度的使用。测试下来这个模型<span style="color:#cf5a5a;font-weight: bold">真的很蠢！</span>，图一乐吧，或许70B模型会更聪明？反正我的显存不够，有实力的小伙伴可以尝试下。</p>
+<p>此外还有目前未解决的问题。</p>
+<ol>
+<li>有时候界面打开会报错。</li>
+<li>Docker_Desktop默认安装在C盘，不知道后期会不会变成巨无霸。</li>
+</ol>
+<p>努力进步！</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
